@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <% console.log(book) %>
+
+    <%- include("./partials/nav.ejs") %>
+
+    <h1><%= book.title %></h1>
+    <a href="/books/edit/<%= book._id%>">Edit <%= book.title%></a>
+
+    <h3><%= book.author %></h3>
+
+    <p><%= book.completed ? "Yeah I read that" : "Still on the list" %></p>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/nav.ejs")%>
+
+    <% console.log(book)%>
+    <h1>Editing <%= book.title%></h1>
+
+    <form action="/books/<%= book._id %>/?_method=PUT" method="post">
+        Title: <input type="text" name="title" value="<%= book.title%>">
+        Author: <input type="text" name="author" value="<%= book.author%>">
+        Completed: <input 
+            type="checkbox" 
+            name="completed"
+            <% if(book.completed=== true){ %> checked <% } %>
+        >
+        <input type="submit" value="Update Book">
+    </form>
+</body>
+</html>
