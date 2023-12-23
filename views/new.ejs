@@ -3,13 +3,20 @@
     <%- include("./partials/head.ejs") %>
 <body>
     <%- include("./partials/nav.ejs") %>
-    <a href="/books">Go Back</a>
-    <h1>New Book Form</h1>
-    <form action="/books" method="post">
-        Title: <input type="text" name="title"><br>
-        Author: <input type="text" name="author"><br>
-        Completed: <input type="checkbox" name="completed"><br>
-        <input type="submit" value="Add book to the list">
-    </form>
+    <div id="new-body">
+        <h1>New Book Form</h1>
+        <form action="/books" method="post" id="newform">
+            <fieldset id="newbook">
+                <legend>Add a book to the library</legend>
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title"><br>
+                    <label for="author">Author</label>
+                    <input type="text" name="author" id="author"><br>
+                    <label for="completed">Completed</label>
+                    <input type="checkbox" name="completed" id="completed"><br>
+                <input type="submit" value="Add book to the list">
+            </fieldset>
+        </form>
+    </div>
 </body>
 </html>
